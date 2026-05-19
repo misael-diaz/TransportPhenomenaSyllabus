@@ -1,0 +1,101 @@
+\section{JUSTIFICATION}
+The analysis, diagnosis, and design of structural solutions for contemporary environmental issues demand a rigorous, quantitative understanding of the mechanisms governing the transport of mass, energy, and momentum. In coastal and insular environments---such as the \Region context of \Institution---ecosystems face high vulnerability. Environmental engineers cannot rely solely on qualitative assessments or "black-box" commercial software, which often mask the underlying physical assumptions and limit critical engineering judgment based on first principles.
+
+Historically, engineering curricula compartmentalize foundational sciences (Multivariable Calculus, Differential Equations, and Fluid Mechanics) in the early semesters, causing a structural disconnect when students advance to applied courses like Water Pollution, Soil Mechanics, or Oceanography. This course serves as the vital bridge that unifies and operationalizes that mathematical background. Through the unified framework of Transport Phenomena, students learn to rigorously formulate local conservation balances as partial differential equations (PDEs).
+
+To optimize pedagogical delivery and maintain maximum mathematical fidelity, this course adopts a \textbf{progression structure sorted by field complexity (Scalar to Vectorial)}. Blocks I and II address the scalar fields of concentration and temperature, analyzing the exact analytical solutions of the Advection-Diffusion and Conduction-Convection equations given known velocity parameters. Finally, Block III introduces the complexity of vector and tensor fields via the Navier-Stokes equations and momentum transport at complex interfaces and porous domains, closing the physical coupling loop.
+
+The territorial relevance to the \Region region is direct:
+\begin{enumerate}
+    \item \textbf{Mass:} Tracking the dispersion of contaminant plumes from submarine outfalls and the advancement of saltwater intrusion fronts in insular limestone aquifers using advection-diffusion dynamics.
+    \item \textbf{Energy:} Modeling the formation of the thermocline, thermal stratification of the ocean, and heat dissipation from coastal infrastructure into the atmosphere.
+    \item \textbf{Momentum:} Evaluating shear stress profiles at the air-sea interface driven by wind, and kinetic friction losses through rough, porous benthic coral matrices.
+\end{enumerate}
+
+\section{COURSE OBJECTIVES}
+
+\subsection{General Objective}
+Train students to formally structure, simplify, and solve fundamental conservation balances of mass, energy, and momentum applied to environmental, coastal, and insular systems, using an analytical approach rooted in first physical principles.
+
+\subsection{Specific {O}bjectives}
+\begin{itemize}
+    \item \textbf{Formulate} property balances using differential control volumes to establish governing transport equations across environmental domains.
+    \item \textbf{Resolve} linear partial differential equations (PDEs) analytically for steady and transient transport states in 1D and 2D geometries using separation of variables, similarity variables, and integral transforms.
+    \item \textbf{Evaluate} spatial and temporal dispersion of contaminants and thermal gradients in water bodies by executing 2D line profile plots and contour maps within a scripting environment.
+    \item \textbf{Analyze} the dynamic behavior of fluid flow through natural porous media and benthic boundary layers, linking velocity fields with shear stress and hydrodynamic drag.
+\end{itemize}
+
+\newpage
+
+\section{THEMATIC CONTENT MATRIX}
+
+\subsection{WEEK 1: Computational \& Mathematical Initialization (Boot-Camp)}
+\begin{itemize}
+    \item \textbf{Concepts:} Re-establishing scripting agility for engineering applications. Execution loops, scripting logic, and multidimensional data structures to represent continuous mathematical fields.
+    \item \textbf{Applied Tooling:} MATLAB/Octave or Python/NumPy environments. Generating 2D Cartesian plots (spatial profiles and temporal evolution) and technical execution of \textbf{Contour Plots} to visualize 2D scalar fields $C(x,y)$ and $T(x,y)$.
+\end{itemize}
+
+\subsection{BLOCK I: MASS TRANSPORT \& DISPERSION IN ECOSYSTEMS (Weeks 2–6)}
+\begin{itemize}
+    \item \textbf{Week 2: Foundations of Mass Transfer.} Fick's First and Second Laws; molecular vs. turbulent eddy diffusivity coefficients in natural waters and soil strata; formulation of the local continuity equation for binary mixtures.
+    \item \textbf{Week 3: Transient Diffusion under Instantaneous and Constant Sources.}
+    \begin{equation}
+        \frac{\partial C}{\partial t} = D \frac{\partial^2 C}{\partial x^2}
+    \end{equation}
+    Boundary conditions: $C(x,0)=0, C(\infty,t)=0, C(0,t)=C_0$. Exact analytical solution via the Complementary Error Function ($\text{erfc}$) applied to sudden soil contamination or groundwater tracer tests.
+    \item \textbf{Week 4: The General Advection-Diffusion-Reaction (ADR) Equation.} Coupling molecular transport with bulk fluid movement. Physical significance and scaling of the mass P\'eclet number ($Pe_M$).
+    \item \textbf{Week 5: Wastewater Plumes from Submarine Outfalls.}
+    \begin{equation}
+        v_x \frac{\partial C}{\partial x} = D_y \frac{\partial^2 C}{\partial y^2}
+    \end{equation}
+    Analytical solution: 2D Gaussian spatial distribution downstream from a continuous coastal discharge source, visualized via concentration isolines (contour maps).
+    \item \textbf{Week 6: Mass Transport with Linear Chemical Sinks.} Modeling contaminant transport experiencing first-order biological decay or degradation (source/sink term $-kC$) within river or coastal currents.
+\end{itemize}
+
+\subsection{BLOCK II: ENERGY TRANSPORT \& OCEAN THERMAL DYNAMICS (Weeks 7–11)}
+\begin{itemize}
+    \item \textbf{Week 7: Foundations of Energy Transfer.} Fourier's Law of Heat Conduction; convective heat transfer coefficients; radiative solar attenuation in water columns via the Beer-Lambert profile.
+    \item \textbf{Week 8: Unsteady Thermal Penetration in the Ocean Surface.}
+    \begin{equation}
+        \frac{\partial T}{\partial t} = \alpha \frac{\partial^2 T}{\partial z^2}
+    \end{equation}
+    Analytical application: Derivation of thermal penetration depth ($\delta_{th} \sim 4\sqrt{\alpha t}$) to analyze diurnal heating limits in shallow lagoons.
+    \item \textbf{Week 9: The Ocean Thermocline \& Stratification.} Density gradients driven by thermal profiles; water column stability, buoyancy dynamics, and the suppression of vertical mass mixing.
+    \item \textbf{Week 10: Thermal Pollution from Coastal Infrastructure.} One-dimensional steady thermal plume models tracking heat dissipation across the water surface boundary to the atmosphere.
+    \item \textbf{Week 11: Mathematical Analogy Between Mass and Energy.} Structural comparative analysis between the analytical solutions of Blocks I and II. Use of dimensionless numbers for simultaneous heat and mass transfer.
+\end{itemize}
+
+\subsection{BLOCK III: MOMENTUM TRANSPORT \& HYDRODYNAMIC FIELDS (Weeks 12–16)}
+\begin{itemize}
+    \item \textbf{Week 12: Foundations of Momentum Flux.} Generalized 3D Newton's Law of Viscosity; mechanical stress tensor; convective vs. molecular transport mechanisms; kinematic and dynamic boundary conditions.
+    \item \textbf{Week 13: Wind-Driven Currents (The Free-Surface Problem).}
+    \begin{equation}
+        \mu \frac{d^2 v_x}{dz^2} = 0
+    \end{equation}
+    Boundary conditions: No-slip at the seabed ($z=0 \rightarrow v_x=0$) and continuous wind shear stress at the surface ($z=h \rightarrow \tau_{zx} = \tau_0$). Analytical solution: Linear Couette-type profile representing surface drift currents.
+    \item \textbf{Week 14: Hydrodynamic Drag over Marine Benthic and Reef Zones.} Prandtl's boundary layer theory adjusted for rough natural boundaries; logarithmic velocity distributions over coral reef matrices.
+    \item \textbf{Week 15: Flow through Porous Media (Aquifer Hydrodynamics).} Macroscopic transport scales; matrix porosity and tortuosity. Derivation of Darcy's Law from Navier-Stokes under creeping flow constraints ($Re \ll 1$).
+    \item \textbf{Week 16: Global Synthesis \& Final Evaluation.} Consolidating structural analogies between transport equations. Comparing momentum ($\nu$), mass ($D$), and thermal ($\alpha$) diffusivities. Final written examination of the vectorial block.
+\end{itemize}
+
+\section{METHODOLOGY \& ANALYTICAL VISUALIZATION WORKSHOPS}
+The pedagogical architecture relies on \textbf{Theoretical Synthesis} coupled with \textbf{Analytical Visualization Workshops}. The computer is utilized strictly as an execution engine to map and interpret classroom derivations, not as a replacement for conceptual modeling.
+
+After completing the analytical derivation of a transport PDE on paper, students use the script environment (\textbf{MATLAB/Octave}) to evaluate the equations over spatial and temporal data arrays. From there, they construct \textbf{2D Cartesian line plots} (to track changes over time or depth profiles) and \textbf{contour maps} (to observe spatial dispersion plumes and thermal boundaries). This approach eliminates the overhead of navigating heavy commercial software suites while immediately maximizing physical intuition for engineering students.
+
+\section{EVALUATION STRATEGY}
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{llp{8cm}}
+\toprule
+\textbf{Evaluation Component} & \textbf{Weight} & \textbf{Brief Description} \\
+\midrule
+Theoretical Written Exams & 60\% & Three individual exams (20\% each) focused on shell balances, physical PDE simplification, and exact analytical derivations. \\
+\addlinespace
+Computational Portfolios & 30\% & Three individual script submissions (10\% each) evaluating mathematical execution accuracy and engineering interpretation of contour plots. \\
+\addlinespace
+Final Synthesis Evaluation & 10\% & A conceptual challenge analyzing coupled scenarios (e.g., how a thermal profile from Block II alters fluid viscosity in Block III, affecting Block I mass dispersion). \\
+\bottomrule
+\end{tabular}
+\end{table}
