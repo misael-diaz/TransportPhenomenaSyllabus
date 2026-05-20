@@ -29,12 +29,15 @@ Train students to formally structure, simplify, and solve fundamental conservati
 
 \section{THEMATIC CONTENT MATRIX}
 
+\textbf{FIXME}: the bootcamp is for preparaing them both for the computational and theoretical aspects of the course: techniques for analyzing engineering problems, odes, plotting, equation solving, arrays, flow control programming structures, and functions.
+\textbf{FIXME}: it is important to state that the choice of programming language can be adjusted to the institution resources. If the institution expects lab courses to use Matlab then we use Matlab. Despite that Python has been in the top TIOBE index for a while managing the Python ecosystem from the perspective of the instution can bog down the IT department. Nevertheless it is great for students to be exposed to Python because it opens a myriad of opportunities. Python is also the language of choice by engineers working at EPA (I have a colleague that works there and that's how I know).
 \subsection{WEEK 1: Computational \& Mathematical Initialization (Boot-Camp)}
 \begin{itemize}
     \item \textbf{Concepts:} Re-establishing scripting agility for engineering applications. Execution loops, scripting logic, and multidimensional data structures to represent continuous mathematical fields.
     \item \textbf{Applied Tooling:} MATLAB/Octave or Python/NumPy environments. Generating 2D Cartesian plots (spatial profiles and temporal evolution) and technical execution of \textbf{Contour Plots} to visualize 2D scalar fields $C(x,y)$ and $T(x,y)$.
 \end{itemize}
 
+\textbf{FIXME}: consider dropping the boundary conditions, one because that might be too specific for a syllabus and everyone knows what the BCs are in this case since it is a classic transient diffusion problem.
 \subsection{BLOCK I: MASS TRANSPORT \& DISPERSION IN ECOSYSTEMS (Weeks 2–6)}
 \begin{itemize}
     \item \textbf{Week 2: Foundations of Mass Transfer.} Fick's First and Second Laws; molecular vs. turbulent eddy diffusivity coefficients in natural waters and soil strata; formulation of the local continuity equation for binary mixtures.
@@ -65,6 +68,7 @@ Train students to formally structure, simplify, and solve fundamental conservati
     \item \textbf{Week 11: Mathematical Analogy Between Mass and Energy.} Structural comparative analysis between the analytical solutions of Blocks I and II. Use of dimensionless numbers for simultaneous heat and mass transfer.
 \end{itemize}
 
+\textbf{FIXME}: same here drop the boundary conditions
 \subsection{BLOCK III: MOMENTUM TRANSPORT \& HYDRODYNAMIC FIELDS (Weeks 12–16)}
 \begin{itemize}
     \item \textbf{Week 12: Foundations of Momentum Flux.} Generalized 3D Newton's Law of Viscosity; mechanical stress tensor; convective vs. molecular transport mechanisms; kinematic and dynamic boundary conditions.
@@ -99,3 +103,7 @@ Final Synthesis Evaluation & 10\% & A conceptual challenge analyzing coupled sce
 \bottomrule
 \end{tabular}
 \end{table}
+
+\textbf{TODO}: you probably want to justify the programming language choice and it is always best to know beforehand what resources the institution has already.
+
+\textbf{TODO}: find out what computing resources the institution has so that students could address computationally demanding problems in the final project. This is a great experience because it adds insight about why environmental models can take months to complete despite that they are running in HPCs.
