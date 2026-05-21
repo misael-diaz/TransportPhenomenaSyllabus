@@ -65,26 +65,26 @@ Train students to formally structure, simplify, and solve fundamental conservati
     Analytical application: Derivation of thermal penetration depth ($\delta_{th} \sim 4\sqrt{\alpha t}$) to analyze diurnal heating limits in shallow lagoons.
     \item \textbf{Week 9: The Ocean Thermocline \& Stratification.} Density gradients driven by thermal profiles; water column stability, buoyancy dynamics, and the suppression of vertical mass mixing.
     \item \textbf{Week 10: Thermal Pollution from Coastal Infrastructure.} One-dimensional steady thermal plume models tracking heat dissipation across the water surface boundary to the atmosphere.
-    \item \textbf{Week 11: Mathematical Analogy Between Mass and Energy.} Structural comparative analysis between the analytical solutions of Blocks I and II. Use of dimensionless numbers for simultaneous heat and mass transfer.
+    \item \textbf{Week 11: Mathematical Analogy Between Mass and Energy.} Structural comparative analysis between the analytical solutions of Blocks I and II. Use of dimensionless quantities to analyze heat and mass transfer.
 \end{itemize}
 
 \subsection{BLOCK III: MOMENTUM TRANSPORT \& HYDRODYNAMIC FIELDS (Weeks 12–16)}
 \begin{itemize}
-    \item \textbf{Week 12: Foundations of Momentum Flux.} Generalized 3D Newton's Law of Viscosity; mechanical stress tensor; convective vs. molecular transport mechanisms; kinematic and dynamic boundary conditions.
+    \item \textbf{Week 12: Foundations of Momentum Flux.} Newton's Law of Viscosity; mechanical stress tensor; convective and molecular transport mechanisms; kinematic and dynamic boundary conditions.
     \item \textbf{Week 13: Wind-Driven Currents (The Free-Surface Problem).}
     \begin{equation}
         \mu \frac{d^2 v_x}{dz^2} = 0
     \end{equation}
 %    Boundary conditions: No-slip at the seabed ($z=0 \rightarrow v_x=0$) and continuous wind shear stress at the surface ($z=h \rightarrow \tau_{zx} = \tau_0$). Analytical solution: Linear Couette-type profile representing surface drift currents.
     \item \textbf{Week 14: Hydrodynamic Drag over Marine Benthic and Reef Zones.} Prandtl's boundary layer theory adjusted for rough natural boundaries; logarithmic velocity distributions over coral reef matrices.
-    \item \textbf{Week 15: Flow through Porous Media (Aquifer Hydrodynamics).} Macroscopic transport scales; matrix porosity and tortuosity. Derivation of Darcy's Law from Navier-Stokes under creeping flow constraints ($Re \ll 1$).
+    \item \textbf{Week 15: Flow through Porous Media (Aquifer Hydrodynamics).} Macroscopic transport scales; matrix porosity and tortuosity. Derivation of Darcy's Law from Navier-Stokes under creeping flow constraints (or small Reynolds limit, $Re \ll 1$).
     \item \textbf{Week 16: Global Synthesis \& Final Evaluation.} Consolidating structural analogies between transport equations. Comparing momentum ($\nu$), mass ($D$), and thermal ($\alpha$) diffusivities. Final written examination of the vectorial block.
 \end{itemize}
 
 \section{METHODOLOGY \& ANALYTICAL VISUALIZATION WORKSHOPS}
-The pedagogical architecture relies on \textbf{Theoretical Synthesis} coupled with \textbf{Analytical Visualization Workshops}. The computer is utilized strictly as an execution engine to map and interpret classroom derivations, not as a replacement for conceptual modeling.
+The pedagogical architecture relies on {Theoretical Analysis} coupled with {Computer-Assisted Visualization}. This is why the first week is invested on reinforcing mathematical techniques and computer programming. The computer is utilized strictly as an execution engine to map and interpret classroom derivations, not as a replacement for conceptual modeling; however, knowing how to use a computer to analyze complex data is stressed in this course.
 
-After completing the analytical derivation of a transport PDE on paper, students use the script environment (\textbf{Matlab}) to evaluate the equations over spatial and temporal data arrays. From there, they construct \textbf{2D Cartesian line plots} (to track changes over time or depth profiles) and \textbf{contour maps} (to observe spatial dispersion plumes and thermal boundaries). This approach eliminates the overhead of navigating heavy commercial software suites while immediately maximizing physical intuition for engineering students.
+After completing the analytical derivation of the governing equations by hand, students are expected to write code (either with Matlab or Python) to evaluate the equations over space and time for transient problems. From there, they construct {2D Cartesian line plots} (to track changes over time or depth profiles) and {contour maps} (to observe spatial dispersion plumes and thermal boundaries for example). This approach eliminates the overhead of learning to navigate heavy commercial software suites. In the end students learn what happens under the hood on commercial software while maximizing physical and numerical intuition when addressing engineering problems.
 
 \section{EVALUATION STRATEGY}
 \begin{table}[h!]
