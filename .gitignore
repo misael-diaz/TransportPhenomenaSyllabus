@@ -1,0 +1,9 @@
+metadata.tex
+*.aux
+*.log
+*.out
+*.dvi
+*.pdf
+*.swp
+*.swo
+*.ps
