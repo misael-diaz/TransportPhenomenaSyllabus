@@ -1,7 +1,7 @@
 \section{JUSTIFICATION}
 The analysis, diagnosis, and design of structural solutions for contemporary environmental issues demand a rigorous, quantitative understanding of the mechanisms governing the transport of mass, energy, and momentum. In coastal and insular environments---such as the \Region context of \Institution---ecosystems face high vulnerability. Environmental engineers cannot rely solely on qualitative assessments or ``black--box'' commercial software, which often mask the underlying physical assumptions and limit critical engineering judgment based on first principles.
 
-Commonly, environmental engineering curricula compartmentalize computer programming and foundational knowledge (Vector Calculus, Differential Equations, and Fluid Mechanics) in the early semesters, risking a structural disconnect when students advance to applied courses like Water Pollution, Soil Mechanics, or Oceanography. This course serves as the vital bridge that unifies and leverages the scientific computing and mathematical rigor with the mentioned applied environmental courses. Through the unified framework of Transport Phenomena, students learn to rigorously formulate local conservation balances as partial differential equations (PDEs), which is the hallmark of advanced engineering courses that international certification agencies, such as ABET, pay attention to when auditing engineering programs.
+Commonly, environmental engineering curricula compartmentalize computer programming and foundational knowledge (vector calculus, differential equations, and fluid mechanics) in the early semesters, risking a structural disconnect when students advance to applied courses like water pollution, soil mechanics, or oceanography. This course serves as the vital bridge that unifies and leverages the scientific computing and mathematical rigor with the mentioned applied environmental courses. Through the unified framework of transport phenomena, students learn to rigorously formulate local conservation balances as partial differential equations (PDEs), which is the hallmark of advanced engineering courses that international certification agencies, such as ABET, pay attention to when auditing engineering programs.
 
 To optimize pedagogical delivery and maintain maximum mathematical fidelity, this course adopts a {progression structure organized by field complexity (from scalar to vectorial solutions)}. Blocks I and II address the scalar fields of concentration and temperature, analyzing the exact analytical solutions of the advection--diffusion equations given known velocity parameters. Finally, Block III introduces the complexity of vector and tensor fields via the Navier--Stokes equations and momentum transport at complex interfaces and porous domains, closing the physical coupling loop. The relevance and connection to the \Region region needs are evident:
 \begin{enumerate}
@@ -30,13 +30,13 @@ Train students to formally structure, simplify, and solve fundamental conservati
 \subsection{WEEK 1: Computational \& Mathematical Initialization}
 \begin{itemize}
     \item \textbf{Concepts:} This period is meant for the students to reconnect with mathematical techniques and writing code for solving engineering problems. Math: Techniques for solving algebraic, ordinary differential, and partial differential equations. Code: Execution loops, scripting logic, functions, and multidimensional data structures to represent continuous mathematical fields.
-    \item \textbf{Tooling:} Either Matlab or the Scientific Python Ecosystem depending on the students learning interests and institutional licenses. Generating 2D Cartesian plots (spatial profiles and temporal evolution) and technical execution of {Contour Plots} to visualize 2D scalar fields, concentration $C(x,y)$ and temperature $T(x,y)$.
+    \item \textbf{Tooling:} Either Matlab or the scientific python ecosystem depending on the students learning interests and institutional licenses. Generating 2D Cartesian plots (spatial profiles and temporal evolution) and technical execution of {contour plots} to visualize 2D scalar fields, concentration $C(x,y)$ and temperature $T(x,y)$.
     \item \textbf{Note:} In my experience students are eager to learn about Python because of its widespread use in other areas of their interest such as embedded systems, web development, machine learning, and artificial intelligence. Therefore, the student engagement tends to be higher when they know that by engaging with the course they are developing highly appraised skills for their future.
 \end{itemize}
 
 \subsection{BLOCK I: MASS TRANSPORT \& DISPERSION IN ECOSYSTEMS (Weeks 2–6)}
 \begin{itemize}
-    \item \textbf{Week 2: Foundations of Mass Transfer.} Fick's First and Second Laws; molecular and turbulent eddy diffusivity coefficients in natural waters and soil strata; formulation of the local continuity equation for binary mixtures.
+    \item \textbf{Week 2: Foundations of Mass Transfer.} Fick's first and second laws; molecular and turbulent eddy diffusivity coefficients in natural waters and soil strata; formulation of the local continuity equation for binary mixtures.
     \item \textbf{Week 3: Transient Diffusion under Instantaneous and Constant Sources.}
     \begin{equation*}
         \frac{\partial C}{\partial t} = D \frac{\partial^2 C}{\partial x^2}
@@ -53,7 +53,7 @@ Train students to formally structure, simplify, and solve fundamental conservati
 
 \subsection{BLOCK II: ENERGY TRANSPORT \& OCEAN THERMAL DYNAMICS (Weeks 7–11)}
 \begin{itemize}
-    \item \textbf{Week 7: Foundations of Energy Transfer.} Fourier's Law of Heat Conduction; convective heat transfer coefficients; radiative solar attenuation in water columns via the Beer--Lambert profile.
+    \item \textbf{Week 7: Foundations of Energy Transfer.} Fourier's law of heat conduction; convective heat transfer coefficients; radiative solar attenuation in water columns via the Beer--Lambert profile.
     \item \textbf{Week 8: Unsteady Thermal Penetration in the Ocean Surface.}
     \begin{equation*}
         \frac{\partial T}{\partial t} = \alpha \frac{\partial^2 T}{\partial z^2}
@@ -66,24 +66,24 @@ Train students to formally structure, simplify, and solve fundamental conservati
 
 \subsection{BLOCK III: MOMENTUM TRANSPORT \& HYDRODYNAMIC FIELDS (Weeks 12–16)}
 \begin{itemize}
-    \item \textbf{Week 12: Foundations of Momentum Flux.} Newton's Law of Viscosity; mechanical stress tensor; convective and molecular transport mechanisms; kinematic and dynamic boundary conditions.
+    \item \textbf{Week 12: Foundations of Momentum Flux.} Newton's law of viscosity; mechanical stress tensor; convective and molecular transport mechanisms; kinematic and dynamic boundary conditions.
     \item \textbf{Week 13: Wind--Driven Currents (The Free--Surface Problem).}
     \begin{equation*}
         \mu \frac{d^2 v_x}{dz^2} = 0
     \end{equation*}
 %    Boundary conditions: No--slip at the seabed ($z=0 \rightarrow v_x=0$) and continuous wind shear stress at the surface ($z=h \rightarrow \tau_{zx} = \tau_0$). Analytical solution: Linear Couette--type profile representing surface drift currents.
     \item \textbf{Week 14: Hydrodynamic Drag over Marine Benthic and Reef Zones.} Prandtl's boundary layer theory adjusted for rough natural boundaries; logarithmic velocity distributions over coral reef matrices.
-    \item \textbf{Week 15: Flow through Porous Media (Aquifer Hydrodynamics).} Macroscopic transport scales; matrix porosity and tortuosity. Derivation of Darcy's Law from Navier--Stokes under creeping flow constraints (or small Reynolds limit, $Re \ll 1$).
+    \item \textbf{Week 15: Flow through Porous Media (Aquifer Hydrodynamics).} Macroscopic transport scales; matrix porosity and tortuosity. Derivation of Darcy's law from Navier--Stokes under creeping flow constraints (or small Reynolds limit, $Re \ll 1$).
     \item \textbf{Week 16: Global Synthesis \& Final Evaluation.} Consolidating structural analogies between transport equations. Comparing momentum ($\nu$), mass ($D$), and thermal ($\alpha$) diffusivities. Final written examination of the vectorial block.
 \end{itemize}
 
 \section{METHODOLOGY \& ANALYTICAL VISUALIZATION WORKSHOPS}
-The pedagogical architecture relies on {Theoretical Analysis} coupled with {Computer--Assisted Visualization}. This is why the first week is invested on reinforcing mathematical techniques and computer programming. The computer is utilized strictly as an execution engine to map and interpret classroom derivations, not as a replacement for conceptual modeling; however, knowing how to use a computer to analyze complex data is stressed throughout the course.
+The pedagogical architecture relies on {theoretical analysis} coupled with {computer--assisted visualization}. This is why the first week is invested on reinforcing mathematical techniques and computer programming. The computer is utilized strictly as an execution engine to map and interpret classroom derivations, not as a replacement for conceptual modeling; however, knowing how to use a computer to analyze complex data is stressed throughout the course.
 
 After completing the analytical derivation of the governing equations by hand, students are expected to write code (either with Matlab or Python) to evaluate the equations over space and time for transient problems. From there, they construct {2D Cartesian line plots} (to track changes over time or depth profiles) and {contour maps} (to observe spatial dispersion plumes and thermal boundaries for example). This approach eliminates the overhead of learning to navigate heavy commercial software suites. In the end students learn what happens under the hood on commercial software while maximizing physical and numerical intuition when addressing engineering problems.
 
 \section{EVALUATION STRATEGY}
-\begin{table}[h!]
+\begin{table}[H]
 \centering
 \small
 \begin{tabular}{llp{8cm}}
