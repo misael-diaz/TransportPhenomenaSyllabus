@@ -4,4 +4,6 @@ metadata.tex
 *.out
 *.dvi
 *.pdf
+*.swp
+*.swo
 *.ps
