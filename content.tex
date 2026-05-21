@@ -38,7 +38,6 @@ Train students to formally structure, simplify, and solve fundamental conservati
     \item \textbf{Note:} In my experience students are eager to learn about Python because of its widepread use in other areas of their interest such as embedded systems, web development, machine learning, and artificial intelligence.
 \end{itemize}
 
-\textbf{FIXME}: consider dropping the boundary conditions, one because that might be too specific for a syllabus and everyone knows what the BCs are in this case since it is a classic transient diffusion problem.
 \subsection{BLOCK I: MASS TRANSPORT \& DISPERSION IN ECOSYSTEMS (Weeks 2–6)}
 \begin{itemize}
     \item \textbf{Week 2: Foundations of Mass Transfer.} Fick's First and Second Laws; molecular vs. turbulent eddy diffusivity coefficients in natural waters and soil strata; formulation of the local continuity equation for binary mixtures.
@@ -46,7 +45,7 @@ Train students to formally structure, simplify, and solve fundamental conservati
     \begin{equation}
         \frac{\partial C}{\partial t} = D \frac{\partial^2 C}{\partial x^2}
     \end{equation}
-    Boundary conditions: $C(x,0)=0, C(\infty,t)=0, C(0,t)=C_0$. Exact analytical solution via the Complementary Error Function ($\text{erfc}$) applied to sudden soil contamination or groundwater tracer tests.
+%    Boundary conditions: $C(x,0)=0, C(\infty,t)=0, C(0,t)=C_0$. Exact analytical solution via the Complementary Error Function ($\text{erfc}$) applied to sudden soil contamination or groundwater tracer tests.
     \item \textbf{Week 4: The General Advection-Diffusion-Reaction (ADR) Equation.} Coupling molecular transport with bulk fluid movement. Physical significance and scaling of the mass P\'eclet number ($Pe_M$).
     \item \textbf{Week 5: Wastewater Plumes from Submarine Outfalls.}
     \begin{equation}
@@ -69,7 +68,6 @@ Train students to formally structure, simplify, and solve fundamental conservati
     \item \textbf{Week 11: Mathematical Analogy Between Mass and Energy.} Structural comparative analysis between the analytical solutions of Blocks I and II. Use of dimensionless numbers for simultaneous heat and mass transfer.
 \end{itemize}
 
-\textbf{FIXME}: same here drop the boundary conditions
 \subsection{BLOCK III: MOMENTUM TRANSPORT \& HYDRODYNAMIC FIELDS (Weeks 12–16)}
 \begin{itemize}
     \item \textbf{Week 12: Foundations of Momentum Flux.} Generalized 3D Newton's Law of Viscosity; mechanical stress tensor; convective vs. molecular transport mechanisms; kinematic and dynamic boundary conditions.
@@ -77,7 +75,7 @@ Train students to formally structure, simplify, and solve fundamental conservati
     \begin{equation}
         \mu \frac{d^2 v_x}{dz^2} = 0
     \end{equation}
-    Boundary conditions: No-slip at the seabed ($z=0 \rightarrow v_x=0$) and continuous wind shear stress at the surface ($z=h \rightarrow \tau_{zx} = \tau_0$). Analytical solution: Linear Couette-type profile representing surface drift currents.
+%    Boundary conditions: No-slip at the seabed ($z=0 \rightarrow v_x=0$) and continuous wind shear stress at the surface ($z=h \rightarrow \tau_{zx} = \tau_0$). Analytical solution: Linear Couette-type profile representing surface drift currents.
     \item \textbf{Week 14: Hydrodynamic Drag over Marine Benthic and Reef Zones.} Prandtl's boundary layer theory adjusted for rough natural boundaries; logarithmic velocity distributions over coral reef matrices.
     \item \textbf{Week 15: Flow through Porous Media (Aquifer Hydrodynamics).} Macroscopic transport scales; matrix porosity and tortuosity. Derivation of Darcy's Law from Navier-Stokes under creeping flow constraints ($Re \ll 1$).
     \item \textbf{Week 16: Global Synthesis \& Final Evaluation.} Consolidating structural analogies between transport equations. Comparing momentum ($\nu$), mass ($D$), and thermal ($\alpha$) diffusivities. Final written examination of the vectorial block.
