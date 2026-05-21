@@ -1,0 +1,124 @@
+\section{JUSTIFICACIÓN}
+El análisis, diagnóstico y diseño de soluciones estructurales para problemas ambientales contemporáneos exigen una comprensión cuantitativa y rigurosa de los mecanismos que gobiernan el transporte de masa, energía y cantidad de movimiento.  En entornos costeros e insulares ---como el contexto de la \Region de la \Institution--- los ecosistemas enfrentan una alta vulnerabilidad.  Los ingenieros ambientales no pueden depender exclusivamente de evaluaciones cualitativas o de software comercial de tipo ``caja negra'', los cuales frecuentemente ocultan las suposiciones físicas subyacentes y limitan el juicio crítico de la ingeniería basado en primeros principios.
+
+Es común que los planes de estudio de ingeniería ambiental compartimenten la programación informática y los conocimientos fundamentales (cálculo vectorial, ecuaciones diferenciales y mecánica de fluidos) en los primeros semestres, corriendo el riesgo de generar una desconexión estructural cuando los estudiantes avanzan a cursos aplicados como contaminación del agua, mecánica de suelos u oceanografía.  Este curso sirve como el puente vital que unifica y potencia la computación científica y el rigor matemático con los mencionados cursos aplicados de ingeniería ambiental.  A través del marco unificado de los fenómenos de transporte, los estudiantes aprenden a formular rigurosamente balances de conservación local como ecuaciones en derivadas parciales (EDP), lo cual es el sello distintivo de los cursos avanzados de ingeniería a los que las agencias de certificación internacional, tales como ABET, prestan atención al auditar programas de ingeniería.
+
+Para optimizar la entrega pedagógica y mantener la máxima fidelidad matemática, este curso adopta una {estructura de progresión organizada por la complejidad del campo (desde soluciones escalares hasta vectoriales)}.  Los Bloques I y II abordan los campos escalares de concentración y temperatura, analizando las soluciones analíticas exactas de las ecuaciones de advección--difusión dados ciertos parámetros de velocidad conocidos. Finalmente, el Bloque III introduce la complejidad de los campos vectoriales y tensoriales a través de las ecuaciones de Navier--Stokes y el transporte de cantidad de movimiento en interfaces complejas y dominios porosos, cerrando el ciclo de acoplamiento físico.
+La relevancia y conexión con las necesidades de la región de la \Region son evidentes:
+\begin{enumerate}
+    \item \textbf{Masa:} Seguimiento de la dispersión de plumas de contaminantes provenientes de emisarios submarinos y el avance de frentes de intrusión salina en acuíferos calcáreos insulares mediante la dinámica de advección--difusión.
+\item \textbf{Energía:} Modelado de la formación de la termoclina, la estratificación térmica del océano y la disipación de calor desde la infraestructura costera hacia la atmósfera.
+\item \textbf{Cantidad de Movimiento:} Evaluación de los perfiles de esfuerzo cortante en la interfaz aire--mar impulsados por el viento, y las pérdidas por fricción cinética a través de matrices de coral bentónicas, rugosas y porosas.
+\end{enumerate}
+
+\section{OBJETIVOS DEL CURSO}
+
+\subsection{Objetivo General}
+Capacitar a los estudiantes para estructurar, simplificar y resolver de manera formal los balances de conservación fundamentales de masa, energía y cantidad de movimiento aplicados a sistemas ambientales, costeros e insulares, utilizando técnicas analíticas y aprovechando la visualización asistida por computadora de campos escalares y vectoriales.
+\subsection{Objetivos Específicos}
+\begin{itemize}
+    \item \textbf{Formular} balances de propiedades utilizando volúmenes de control diferenciales para establecer las ecuaciones de transporte gobernantes a través de dominios ambientales.
+\item \textbf{Resolver} ecuaciones en derivadas parciales (EDP) lineales de forma analítica para estados de transporte estacionarios y transitorios en geometrías 1D y 2D mediante separación de variables, técnicas de similitud y transformadas integrales.
+\item \textbf{Evaluar} la dispersión espacial y temporal de contaminantes y gradientes térmicos en cuerpos de agua ejecutando gráficos de perfiles de línea en 2D y mapas de contorno.
+\item \textbf{Analizar} el comportamiento dinámico del flujo de fluidos a través de medios porosos naturales y capas límite bentónicas, vinculando los campos de velocidad con el esfuerzo cortante y el arrastre hidrodinámico.
+\end{itemize}
+
+\newpage
+
+\section{MATRIZ DE CONTENIDO TEMÁTICO}
+
+\subsection{SEMANA 1: Inicialización Computacional y Matemática}
+\begin{itemize}
+    \item \textbf{Conceptos:} Este período está destinado a que los estudiantes se reconecten con las técnicas matemáticas y la escritura de código para resolver problemas de ingeniería.
+Matemáticas: Técnicas para resolver ecuaciones algebraicas, diferenciales ordinarias y en derivadas parciales.
+Código: Bucles de ejecución, lógica de scripts, funciones y estructuras de datos multidimensionales para representar campos matemáticos continuos.
+\item \textbf{Herramientas:} Ya sea Matlab o el ecosistema científico de Python, dependiendo de los intereses de aprendizaje de los estudiantes y las licencias institucionales.
+Generación de gráficos cartesianos en 2D (perfiles espaciales y evolución temporal) y ejecución técnica de {gráficos de contorno} para visualizar campos escalares en 2D, concentración $C(x,y)$ y temperatura $T(x,y)$.
+\item \textbf{Nota:} En mi experiencia, los estudiantes están ansiosos por aprender Python debido a su uso generalizado en otras áreas de su interés, tales como sistemas embebidos, desarrollo web, aprendizaje automático e inteligencia artificial.
+Por lo tanto, el compromiso del estudiante tiende a ser mayor cuando saben que al participar en el curso están desarrollando habilidades altamente valoradas para su futuro.
+\end{itemize}
+
+\subsection{BLOQUE I: TRANSPORTE DE MASA Y DISPERSIÓN EN ECOSISTEMAS (Semanas 2–6)}
+\begin{itemize}
+    \item \textbf{Semana 2: Fundamentos de la Transferencia de Masa.} Primera y Segunda Ley de Fick;
+coeficientes de difusividad molecular y de remolinos turbulentos en aguas naturales y estratos del suelo;
+formulación de la ecuación de continuidad local para mezclas binarias.
+    \item \textbf{Semana 3: Difusión Transitoria bajo Fuentes Instantáneas y Constantes.}
+    \begin{equation*}
+        \frac{\partial C}{\partial t} = D \frac{\partial^2 C}{\partial x^2}
+    \end{equation*}
+%    Condiciones de contorno: $C(x,0)=0, C(\infty,t)=0, C(0,t)=C_0$.
+    Solución analítica exacta mediante la Función de Error Complementaria ($\text{erfc}$) aplicada a la contaminación repentina del suelo o a pruebas de trazadores en aguas subterráneas.
+\item \textbf{Semana 4: La Ecuación General de Advección--Difusión--Reacción (ADR).} Acoplamiento del transporte molecular con el movimiento global del fluido.
+Significado físico y escalado del número de Péclet ($Pe$).
+    \item \textbf{Semana 5: Plumas de Aguas Residuales de Emisarios Submarinos.}
+    \begin{equation*}
+        v_x \frac{\partial C}{\partial x} = D_y \frac{\partial^2 C}{\partial y^2}
+    \end{equation*}
+    Solución analítica: Distribución espacial gaussiana en 2D río abajo de una fuente de descarga costera continua, visualizada a través de isolíneas de concentración (mapas de contorno).
+\item \textbf{Semana 6: Transporte de Masa con Sumideros Químicos Lineales.} Modelado del transporte de contaminantes que experimentan decaimiento biológico o degradación de primer orden dentro de corrientes fluviales o costeras.
+\end{itemize}
+
+\subsection{BLOQUE II: TRANSPORTE DE ENERGÍA Y DINÁMICA TÉRMICA OCEÁNICA (Semanas 7–11)}
+\begin{itemize}
+    \item \textbf{Semana 7: Fundamentos de la Transferencia de Energía.} Ley de conducción de calor de Fourier;
+coeficientes de transferencia de calor por convección; atenuación de la radiación solar en columnas de agua a través del perfil de Beer--Lambert.
+\item \textbf{Semana 8: Penetración Térmica No Estacionaria en la Superficie del Océano.}
+    \begin{equation*}
+        \frac{\partial T}{\partial t} = \alpha \frac{\partial^2 T}{\partial z^2}
+    \end{equation*}
+    Aplicación analítica: Derivación de la profundidad de penetración térmica ($\delta_{th} \sim 4\sqrt{\alpha t}$) para analizar los límites del calentamiento diurno en lagunas poco profundas.
+\item \textbf{Semana 9: La Termoclina Oceánica y Estratificación.} Gradientes de densidad impulsados por perfiles térmicos;
+estabilidad de la columna de agua, dinámica de flotabilidad y la supresión de la mezcla de masa vertical.
+\item \textbf{Semana 10: Contaminación Térmica de la Infraestructura Costera.} Modelos de pluma térmica estacionaria unidimensional que rastrean la disipación de calor a través del límite de la superficie del agua hacia la atmósfera.
+\item \textbf{Semana 11: Analogía Matemática entre Masa y Energía.} Análisis comparativo estructural entre las soluciones analíticas de los Bloques I y II.
+Uso de cantidades adimensionales para analizar la transferencia de calor y masa.
+\end{itemize}
+
+\subsection{BLOQUE III: TRANSPORTE DE CANTIDAD DE MOVIMIENTO Y CAMPOS HIDRODINÁMICOS (Semanas 12–16)}
+\begin{itemize}
+    \item \textbf{Semana 12: Fundamentos del Flujo de Cantidad de Movimiento.} Ley de la viscosidad de Newton;
+tensor de esfuerzos mecánicos; mecanismos de transporte convectivo y molecular; condiciones de contorno cinemáticas y dinámicas.
+\item \textbf{Semana 13: Corrientes Impulsadas por el Viento (El Problema de Superficie Libre).}
+    \begin{equation*}
+        \mu \frac{d^2 v_x}{dz^2} = 0
+    \end{equation*}
+%    Condiciones de contorno: No deslizamiento en el fondo marino ($z=0 \rightarrow v_x=0$) y esfuerzo cortante continuo del viento en la superficie ($z=h \rightarrow \tau_{zx} = \tau_0$).
+Solución analítica: Perfil lineal de tipo Couette que representa las corrientes de deriva superficial.
+    \item \textbf{Semana 14: Arrastre Hidrodinámico sobre Zonas Bentónicas y Arrecifales Marinas.} Teoría de la capa límite de Prandtl ajustada para límites naturales rugosos;
+distribuciones logarítmicas de velocidad sobre matrices de arrecifes de coral.
+    \item \textbf{Semana 15: Flujo a través de Medios Porosos (Hidrodinámica de Acuíferos).} Escalas de transporte macroscópico;
+porosidad y tortuosidad de la matriz. Derivación de la ley de Darcy a partir de Navier--Stokes bajo restricciones de flujo reptante (o límite de número de Reynolds pequeño, $Re \ll 1$).
+\item \textbf{Semana 16: Síntesis Global y Evaluación Final.} Consolidación de analogías estructurales entre las ecuaciones de transporte.
+Comparación de las difusividades de cantidad de movimiento ($\nu$), masa ($D$) y térmica ($\alpha$). Examen escrito final del bloque vectorial.
+\end{itemize}
+
+\section{METODOLOGÍA Y TALLERES DE VISUALIZACIÓN ANALÍTICA}
+La arquitectura pedagógica se basa en el {análisis teórico} acoplado con la {visualización asistida por computadora}.
+Es por esto que la primera semana se invierte en reforzar las técnicas matemáticas y la programación informática.
+La computadora se utiliza estrictamente como un motor de ejecución para mapear e interpretar las derivaciones de la clase, no como un reemplazo del modelado conceptual;
+sin embargo, el saber cómo usar una computadora para analizar datos complejos se enfatiza a lo largo del curso.
+Después de completar a mano la derivación analítica de las ecuaciones gobernantes, se espera que los estudiantes escriban código (ya sea con Matlab o Python) para evaluar las ecuaciones en el espacio y el tiempo para problemas transitorios.
+A partir de ahí, construyen {gráficos de líneas cartesianas en 2D} (para rastrear cambios a lo largo del tiempo o perfiles de profundidad) y {mapas de contorno} (para observar, por ejemplo, plumas de dispersión espacial y límites térmicos).
+Este enfoque elimina la sobrecarga de aprender a navegar en pesadas suites de software comercial.
+Al final, los estudiantes aprenden lo que sucede tras vastidores en el software comercial mientras maximizan la intuición física y numérica al abordar problemas de ingeniería.
+
+\section{ESTRATEGIA DE EVALUACIÓN}
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{llp{8cm}}
+\toprule
+\textbf{Componente de Evaluación} & \textbf{Peso} & \textbf{Breve Descripción} \\
+\midrule
+Exámenes Escritos Teóricos & 60\% & Tres exámenes individuales (20\% cada uno) enfocados en balances de coraza, simplificación física de EDP y derivaciones analíticas exactas.
+\\
+\addlinespace
+Portafolios Computacionales & 30\% & Tres entregas individuales de código (10\% cada una) que evalúan la precisión de la ejecución matemática y la interpretación ingenieril de los resultados (como los gráficos de contorno).
+\\
+\addlinespace
+Evaluación de Síntesis Final & 10\% & Un desafío conceptual que analiza escenarios acoplados (por ejemplo, cómo un perfil térmico del Bloque II altera la viscosidad del fluido en el Bloque III, afectando la dispersión de masa del Bloque I).
+\\
+\bottomrule
+\end{tabular}
+\end{table}
