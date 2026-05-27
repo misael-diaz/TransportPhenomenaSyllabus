@@ -1,8 +1,11 @@
-\documentclass[11pt, letterpaper, oneside]{article}
+\documentclass[10pt, letterpaper, oneside]{article}
 
 \usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
-\usepackage[dvips, margin=2.5cm]{geometry} 
+\usepackage[spanish]{babel}
+\usepackage[margin=2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[scaled=0.92]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{amsmath, amsfonts, amssymb}
 \usepackage{graphicx}
 \usepackage{booktabs} 
@@ -30,7 +33,7 @@
 \parskip=6pt 
 \parindent=0pt
 
-\InputIfFileExists{metadata.tex}{}{
+\InputIfFileExists{spanish_metadata.tex}{}{
 	\newcommand{\Institution}{PLACEHOLDER INSTITUTION}
 	\newcommand{\Region}{PLACEHOLDER REGION}
 	\newcommand{\Program}{PLACEHOLDER PROGRAM}
@@ -54,5 +57,6 @@
 \vspace{10pt}
 
 \input{spanish_content.tex}
+\input{spanish_references.tex}
 
 \end{document}
